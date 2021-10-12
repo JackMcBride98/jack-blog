@@ -12,7 +12,7 @@ export default function MyApp({ Component, pageProps }) {
     >
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>My awesome blog</title>
+        <title>The Jack McBride Project</title>
       </Head>
 
       <Header />
