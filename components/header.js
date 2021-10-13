@@ -5,9 +5,10 @@ function Header() {
   return (
     <header className="py-6">
       <Container>
-        <nav className="flex space-x-4">
+        <nav className="flex space-x-4 border-b-2">
+          <h1> <b> The Jack McBride Project </b> </h1>
           <Link href="/">
-            <a>About</a>
+            <a>Home</a>
           </Link>
           <Link href="/posts">
             <a>Posts</a>

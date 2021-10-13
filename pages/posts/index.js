@@ -7,7 +7,7 @@ export default function NotePage({ allPosts }) {
   return (
     <Container>
       {allPosts.length ? (
-        allPosts.map((post) => (
+        allPosts.sort((post1, post2) => (post1.date < post2.date ? -1 : 1)).map((post) => (
           <article key={post.slug} className="mb-10">
             <Link as={`/posts/${post.slug}`} href="/posts/[slug]">
               <a className="text-lg leading-6 font-bold">{post.title}</a>

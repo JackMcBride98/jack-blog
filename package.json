@@ -7,16 +7,17 @@
   },
   "dependencies": {
     "@auth0/auth0-react": "^1.4.0",
+    "@next/mdx": "^11.1.2",
     "@tailwindcss/typography": "^0.4.0",
     "date-fns": "^2.19.0",
     "gray-matter": "4.0.3",
     "ioredis": "^4.27.1",
     "nanoid": "^3.1.22",
-    "next": "^10.2.3",
+    "next": "^11.1.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "remark": "13.0.0",
-    "remark-html": "13.0.1",
+    "remark-html": "^15.0.0",
     "swr": "^0.5.5"
   },
   "devDependencies": {
