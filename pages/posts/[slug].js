@@ -6,6 +6,7 @@ import distanceToNow from '../../lib/dateRelative'
 import { getAllPosts, getPostBySlug } from '../../lib/getPost'
 import markdownToHtml from '../../lib/markdownToHtml'
 import Head from 'next/head'
+import Link from 'next/link'
 
 export default function PostPage({ post }) {
   const router = useRouter()
@@ -27,9 +28,6 @@ export default function PostPage({ post }) {
           <article>
             <header>
               <h1 className="text-4xl font-bold">{post.title}</h1>
-              {post.excerpt ? (
-                <p className="mt-2 text-xl">{post.excerpt}</p>
-              ) : null}
               <time className="flex mt-2 text-gray-400">
                 {distanceToNow(new Date(post.date))}
               </time>
@@ -40,7 +38,9 @@ export default function PostPage({ post }) {
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
           </article>
-
+          <Link href="/">
+              <a>Back to home</a>
+          </Link>  
           <Comment />
         </div>
       )}

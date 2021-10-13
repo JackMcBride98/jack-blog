@@ -38,16 +38,10 @@ function HomePage({ allPosts }) {
 
       <div className="container max-w-4xl m-auto px-4 mt-20">
         <Image
-          src="/JackElma.jpg"
+          src="/images/JackElma.jpg"
           alt="Jack and Elma"
           width={500}
           height={500}
-        />
-        <Image
-          src="/JackOutHere.jpg"
-          alt="Jack Out Here"
-          width={500}
-          height={666}
         />
       </div>
     </>
