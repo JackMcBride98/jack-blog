@@ -8,16 +8,22 @@ function HomePage({ allPosts }) {
   return (
     <>
       <Container>
-        <div className="space-y-6">
+      <Image className="rounded-full"
+              src="/images/JackElma.jpg"
+              alt="Jack and Elma"
+              width={250}
+              height={250}
+      />
+        <div className="space-y-2">
+          <div className="container max-w-4xl m-auto px-4">
+          </div>
           <h1 className="text-2xl font-bold">
             Welcome to "The Jack McBride Project"!
           </h1>
           <p>
             This is my personal blog. I will cover topics such as software development, music production, book reviews, spirituality, mental health and more.
           </p>
-          <br/>
-          <h1 className="text-2xl font-bold">Blog Posts</h1>
-          <br/>
+          <h1 className="text-2xl font-bold py-8">Blog Posts</h1>
         </div>
           {allPosts.length ? (
             allPosts.map((post) => (
@@ -35,15 +41,6 @@ function HomePage({ allPosts }) {
             <p>No blog posted yet :/</p>
           )}
       </Container>
-
-      <div className="container max-w-4xl m-auto px-4 mt-20">
-        <Image
-          src="/images/JackElma.jpg"
-          alt="Jack and Elma"
-          width={500}
-          height={500}
-        />
-      </div>
     </>
   )
 }

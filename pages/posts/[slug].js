@@ -34,12 +34,12 @@ export default function PostPage({ post }) {
             </header>
 
             <div
-              className="prose mt-10"
+              className="prose mt-10 pb-6"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
           </article>
-          <Link href="/">
-              <a>Back to home</a>
+          <Link className="" href="/">
+              <a className="text-blue-600 bg-blue-100 border-2 border-blue-400 rounded">Back to home</a>
           </Link>  
           <Comment />
         </div>

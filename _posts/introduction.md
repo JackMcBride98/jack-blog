@@ -1,6 +1,6 @@
 ---
 title: "Introduction to The Jack McBride Project"
-excerpt: "Hello, my name is Jack Connor McBride and this is my blog. Here I will share insights into my life."
+excerpt: "Currently I am building a web development portfolio, hence the *blog*. 'What is your story' I hear you ask. Well it goes like this... "
 date: "2021-10-12"
 ---
 
