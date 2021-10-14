@@ -1,0 +1,21 @@
+---
+title: "Book Review - Talking to My Daughter A Brief History of Capitalism by Yanis Varoufakis"
+excerpt: "This is my first book review and I am starting off with a belter. This book explains how our society came to be organised with capitalism..."
+tags: "#Reading  #Econmoics #BookReview"
+date: "2021-10-13"
+---
+
+![Talking to My Daughter A Brief History of Capitalism](/images/book1.jpg)
+
+This is my first book review and I am starting off with a belter. This book explains how our society came to be organised with capitalism. Before reading this book I was angry and confused about why I had to work for a living. I think that I believed that capitalism was created by the richest in our society as a means to enslave the rest of humanity. I felt an immense amount of pressure to work from society.
+
+The book explains how capitalism came into being. It really offers a new perspective where you can see capitalism as a stepping stone in the evolution of the organisation of society. It allowed me to envisage that over time society will improve and puts into persepctive how far society has already come - I am thankful we live under capitalism not feudalism. Now this book has not turned me into a capitalist enthuisiast, far from it, but it has lessened my angst around capitalism and offered a kinder and more informed view of the world we live in.
+
+The book is only 200 pages and it's an easy read, seeing as it's written from the perspective of the author talking to his daughter. I could not recommend this book enough, I think it would be beneficial for everyone to read. If you know me get in touch, I can lend it to you :)
+## Blurb
+![Blurb](/images/book1blurb.jpg)
+## Contents
+![Contents](/images/book1contents.jpg)
+
+
+Happy Reading!
