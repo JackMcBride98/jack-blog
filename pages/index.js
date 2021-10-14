@@ -27,15 +27,16 @@ function HomePage({ allPosts }) {
         </div>
           {allPosts.length ? (
             allPosts.map((post) => (
-              <article key={post.slug} className="mb-10">
-                <Link as={`/posts/${post.slug}`} href="/posts/[slug]">
+              <Link as={`/posts/${post.slug}`} href="/posts/[slug]" >
+                <article key={post.slug} className="mb-10 rounded hover:shadow-md hover:cursor-pointer border-2 p-2 ">
                   <a className="text-lg leading-6 font-bold">{post.title}</a>
-                </Link>
-                <p>{post.excerpt}</p>
-                <div className="text-gray-400">
-                  <time>{distanceToNow(new Date(post.date))}</time>
-                </div>
-              </article>
+                  <p>{post.excerpt}</p>
+                  <p className="text-sm pt-1">Tags: <b> {post.tags} </b> </p>
+                  <div className="text-gray-400">
+                    <time>{distanceToNow(new Date(post.date))}</time>
+                  </div>
+                </article>
+              </Link>
             ))
           ) : (
             <p>No blog posted yet :/</p>
@@ -46,7 +47,7 @@ function HomePage({ allPosts }) {
 }
 
 export async function getStaticProps() {
-  const allPosts = getAllPosts(['slug', 'title', 'excerpt', 'date'])
+  const allPosts = getAllPosts(['slug', 'title', 'excerpt', 'tags' , 'date'])
 
   return {
     props: { allPosts },
