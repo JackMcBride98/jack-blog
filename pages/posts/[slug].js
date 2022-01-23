@@ -39,8 +39,10 @@ export default function PostPage({ post }) {
             />
           </article>
           <Link className="" href="/">
-              <a className="text-blue-600 bg-blue-100 border-2 border-blue-400 rounded">Back to home</a>
-          </Link>  
+            <a className="text-blue-600 bg-blue-100 border-2 border-blue-400 rounded">
+              Back to home
+            </a>
+          </Link>
           <Comment />
         </div>
       )}
@@ -58,7 +60,6 @@ export async function getStaticProps({ params }) {
     'content',
   ])
   const content = await markdownToHtml(post.content || '')
-
   return {
     props: {
       post: {
