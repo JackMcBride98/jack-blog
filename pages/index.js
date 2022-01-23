@@ -32,7 +32,11 @@ function HomePage({ allPosts }) {
         </div>
         {allPosts.length ? (
           allPosts.map((post) => (
-            <Link as={`/posts/${post.slug}`} href="/posts/[slug]">
+            <Link
+              as={`/posts/${post.slug}`}
+              href="/posts/[slug]"
+              key={post.slug}
+            >
               <article
                 key={post.slug}
                 className="mb-10 rounded hover:shadow-md hover:cursor-pointer border-2 p-2 "

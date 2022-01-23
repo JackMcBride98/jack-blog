@@ -1,6 +1,6 @@
 module.exports = {
   mode: 'jit',
-  purge: ['./pages/**/*.js', './components/**/*.js'],
+  content: ['./pages/**/*.{html,js}', './components/**/*.{html,js}'],
   variants: {
     extend: {
       opacity: ['disabled'],
