@@ -3,6 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import distanceToNow from '../lib/dateRelative'
 import { getAllPosts } from '../lib/getPost'
+import JackElmaImg from '../public/images/JackElma.jpg'
+import rightArrow from '../public/images/right-arrow.png'
 
 function HomePage({ allPosts }) {
   return (
@@ -11,10 +13,11 @@ function HomePage({ allPosts }) {
         <div className="flex justify-center">
           <Image
             className="rounded-full"
-            src="/images/JackElma.jpg"
+            src={JackElmaImg}
             alt="Jack and Elma"
             width={250}
             height={250}
+            placeholder="blur"
           />
         </div>
 
@@ -39,15 +42,21 @@ function HomePage({ allPosts }) {
             >
               <article
                 key={post.slug}
-                className="mb-10 rounded hover:shadow-md hover:cursor-pointer border-2 p-2 "
+                className="mb-10 rounded-md hover:shadow-md hover:cursor-pointer border-2 p-4 space-y-2"
               >
                 <a className="text-lg leading-6 font-bold">{post.title}</a>
                 <p>{post.excerpt}</p>
-                <p className="text-sm pt-1">
+                <p className="text-sm ">
                   Tags: <b> {post.tags} </b>{' '}
                 </p>
-                <div className="text-gray-400">
+                <div className="text-gray-400 flex justify-between">
                   <time>{distanceToNow(new Date(post.date))}</time>
+                  <Image
+                    src={rightArrow}
+                    width={25}
+                    height={25}
+                    alt="blue right arrow"
+                  />
                 </div>
               </article>
             </Link>
