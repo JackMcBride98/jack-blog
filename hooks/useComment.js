@@ -7,17 +7,17 @@ export default function useComments() {
   const [text, setText] = useState('')
   const [url, setUrl] = useState(null)
 
-  const { data: comments, mutate } = useSWR(
-    () => {
-      const query = new URLSearchParams({ url })
-      return `/api/comment?${query.toString()}`
-    },
-    {
-      initialData: [],
-    }
-  )
+  const fetcher = (...args) => fetch(...args).then((res) => res.json())
+
+  const { data: comments, mutate } = useSWR(() => {
+    const query = new URLSearchParams({ url })
+
+    return `/api/comment?${query.toString()}`
+  }, fetcher)
 
   useEffect(() => {
+    console.log('using effect')
+    console.log(window)
     const url = window.location.origin + window.location.pathname
     setUrl(url)
   }, [])
