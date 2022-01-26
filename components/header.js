@@ -6,12 +6,18 @@ function Header() {
     <header className="py-6">
       <Container>
         <nav className="flex space-x-4 border-b-2">
-          <h1> <b> The Jack McBride Project </b> </h1>
+          <h1>
+            <b> The Jack McBride Project </b>
+          </h1>
           <Link href="/">
-            <a>Home</a>
+            <a className="hover:text-purple-600 hover:underline decoration-1">
+              Home
+            </a>
           </Link>
           <Link href="/posts">
-            <a>Posts</a>
+            <a className="hover:text-purple-600 hover:underline decoration-1">
+              Posts
+            </a>
           </Link>
         </nav>
       </Container>
