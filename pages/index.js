@@ -1,10 +1,10 @@
 import Container from '../components/container'
 import Image from 'next/image'
 import Link from 'next/link'
-import distanceToNow from '../lib/dateRelative'
 import { getAllPosts } from '../lib/getPost'
 import JackElmaImg from '../public/images/Jack-Elma.jpg'
 import rightArrow from '../public/images/right-arrow.png'
+import formatDate from '../lib/formatDate'
 
 function HomePage({ allPosts }) {
   return (
@@ -53,7 +53,7 @@ function HomePage({ allPosts }) {
                     Tags: <b> {post.tags} </b>{' '}
                   </p>
                   <div className="text-gray-400 flex justify-between">
-                    <time>{distanceToNow(new Date(post.date))}</time>
+                    <time>{formatDate(new Date(post.date))}</time>
                     <div className="mr-2 mb-2">
                       <Image
                         src={rightArrow}

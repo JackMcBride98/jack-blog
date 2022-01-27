@@ -16,8 +16,6 @@ export default function useComments() {
   }, fetcher)
 
   useEffect(() => {
-    console.log('using effect')
-    console.log(window)
     const url = window.location.origin + window.location.pathname
     setUrl(url)
   }, [])

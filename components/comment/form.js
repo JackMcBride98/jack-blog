@@ -21,17 +21,20 @@ function CommentForm({ text, setText, onSubmit }) {
       <div className="flex items-center mt-4">
         {isAuthenticated ? (
           <div className="flex items-center space-x-6">
-            <button className="py-2 px-4 rounded bg-blue-600 text-white disabled:opacity-40 hover:bg-blue-700">
+            <button className="py-2 px-4 rounded bg-purple-600 text-white disabled:opacity-40 hover:bg-purple-700">
               Send
             </button>
-            <button className="text-gray-500" onClick={() => logout()}>
+            <button
+              className="text-black bg-gray-300 py-2 px-4 rounded"
+              onClick={() => logout()}
+            >
               Log out
             </button>
           </div>
         ) : (
           <button
             type="button"
-            className="py-2 px-4 rounded bg-blue-600 text-white disabled:opacity-40 hover:bg-blue-700"
+            className="py-2 px-4 rounded bg-purple-600 text-white disabled:opacity-40 hover:bg-purple-700"
             onClick={() => loginWithPopup()}
           >
             Log In

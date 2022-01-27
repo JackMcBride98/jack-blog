@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import Comment from '../../components/comment'
 import Container from '../../components/container'
-import distanceToNow from '../../lib/dateRelative'
+import formatDate from '../../lib/formatDate'
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -29,11 +29,11 @@ const PostPage = ({ frontMatter: { title, date }, slug, mdxSource }) => {
         <div>Loading…</div>
       ) : (
         <div>
-          <article className="prose">
+          <article className="prose mb-4">
             <header>
               <h1 className="text-4xl font-bold">{title}</h1>
               <time className="flex mt-2 text-gray-400">
-                {distanceToNow(new Date(date))}
+                {formatDate(new Date(date))}
               </time>
             </header>
             {/* <div>{post.content}</div> */}
@@ -43,11 +43,14 @@ const PostPage = ({ frontMatter: { title, date }, slug, mdxSource }) => {
             /> */}
             <MDXRemote {...mdxSource} components={{ Image }} />
           </article>
-          <Link className="" href="/">
-            <a className="text-blue-600 bg-blue-100 border-2 border-blue-400 rounded">
-              Back to home
-            </a>
-          </Link>
+          <div className="flex justify-center">
+            <Link className="" href="/">
+              <a className="text-purple-600 bg-purple-100 border-2 border-purple-400 rounded p-2">
+                Back to home
+              </a>
+            </Link>
+          </div>
+
           <Comment />
         </div>
       )}

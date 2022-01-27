@@ -2,8 +2,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import rightArrow from '../../public/images/right-arrow.png'
 import Container from '../../components/container'
-import distanceToNow from '../../lib/dateRelative'
 import { getAllPosts } from '../../lib/getPost'
+import formatDate from '../../lib/formatDate'
 
 export default function NotePage({ allPosts }) {
   return (
@@ -31,7 +31,7 @@ export default function NotePage({ allPosts }) {
                       Tags: <b> {post.tags} </b>{' '}
                     </p>
                     <div className="text-gray-400 flex justify-between">
-                      <time>{distanceToNow(new Date(post.date))}</time>
+                      <time>{formatDate(new Date(post.date))}</time>
                       <div className="mr-2 mb-2">
                         <Image
                           src={rightArrow}
