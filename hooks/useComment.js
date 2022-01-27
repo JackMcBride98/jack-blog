@@ -5,6 +5,7 @@ import { useAuth0 } from '@auth0/auth0-react'
 export default function useComments() {
   const { getAccessTokenSilently } = useAuth0()
   const [text, setText] = useState('')
+  const [replyID, setReplyID] = useState(false)
   const [url, setUrl] = useState(null)
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json())
@@ -27,7 +28,7 @@ export default function useComments() {
     try {
       await fetch('/api/comment', {
         method: 'POST',
-        body: JSON.stringify({ url, text }),
+        body: JSON.stringify({ url, text, replyID }),
         headers: {
           Authorization: token,
           'Content-Type': 'application/json',
@@ -58,5 +59,5 @@ export default function useComments() {
     }
   }
 
-  return { text, setText, comments, onSubmit, onDelete }
+  return { text, setText, replyID, setReplyID, comments, onSubmit, onDelete }
 }

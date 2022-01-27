@@ -29,7 +29,7 @@ const PostPage = ({ frontMatter: { title, date }, slug, mdxSource }) => {
         <div>Loading…</div>
       ) : (
         <div>
-          <article className="prose mb-4">
+          <article className="prose">
             <header>
               <h1 className="text-4xl font-bold">{title}</h1>
               <time className="flex mt-2 text-gray-400">
