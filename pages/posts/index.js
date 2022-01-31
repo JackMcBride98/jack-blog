@@ -21,9 +21,9 @@ export default function NotePage({ allPosts }) {
                 >
                   <article
                     key={post.slug}
-                    className="mb-10 rounded-md hover:shadow-md hover:cursor-pointer border-2 p-4 pb-0 space-y-2 w-4/5 group"
+                    className="mb-10 rounded-md hover:shadow-md hover:cursor-pointer border-2 p-4 pb-0 space-y-2 w-4/5 group transition ease-in-out duration-300"
                   >
-                    <a className="text-lg leading-6 font-bold group-hover:text-purple-600">
+                    <a className="text-lg leading-6 font-bold group-hover:text-purple-600  ransition ease-in-out duration-300">
                       {post.title}
                     </a>
                     <p>{post.excerpt}</p>

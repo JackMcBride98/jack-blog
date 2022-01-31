@@ -45,7 +45,7 @@ const PostPage = ({ frontMatter: { title, date }, slug, mdxSource }) => {
           </article>
           <div className="flex justify-center">
             <Link className="" href="/">
-              <a className="text-purple-600 bg-purple-100 border-2 border-purple-400 rounded p-2">
+              <a className="text-purple-600 bg-purple-100 border-2 border-purple-400 rounded p-2 hover:bg-purple-200 transition ease-out">
                 Back to home
               </a>
             </Link>

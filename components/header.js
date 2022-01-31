@@ -10,12 +10,12 @@ function Header() {
             <b> The Jack McBride Project </b>
           </h1>
           <Link href="/">
-            <a className="hover:text-purple-600 hover:underline decoration-1">
+            <a className="hover:text-purple-600 hover:underline decoration-1  transition ease-out duration-300">
               Home
             </a>
           </Link>
           <Link href="/posts">
-            <a className="hover:text-purple-600 hover:underline decoration-1">
+            <a className="hover:text-purple-600 hover:underline decoration-1  transition ease-in-out duration-300">
               Posts
             </a>
           </Link>

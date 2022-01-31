@@ -11,7 +11,7 @@ function CommentList({ comments, onDelete, setReplyID, replyID, textareaRef }) {
     <div className="pt-10">
       {comments &&
         comments
-          .filter((comment) => !comment.parent)
+          .filter((comment) => !comment.parentID)
           .map((comment) => {
             const isAuthor = user && user.sub === comment.user.sub
             const isAdmin =
@@ -20,12 +20,14 @@ function CommentList({ comments, onDelete, setReplyID, replyID, textareaRef }) {
             return (
               <Comment
                 comment={comment}
+                comments={comments}
                 replyID={replyID}
                 setReplyID={setReplyID}
                 textareaRef={textareaRef}
                 onDelete={onDelete}
                 isAuthor={isAuthor}
                 isAdmin={isAdmin}
+                key={comment.id}
               ></Comment>
             )
           })}
