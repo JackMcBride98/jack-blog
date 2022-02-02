@@ -13,15 +13,25 @@ function CommentForm({
   return (
     <form onSubmit={onSubmit}>
       <div ref={textareaRef} className="flex mb-1">
-        <p className="p-2">{replyID ? 'Replying to ' + replyID.name : ''}</p>
         {replyID ? (
-          <button
-            type="button"
-            className="py-1 px-1 bg-white hover:bg-gray-300 text-slate-300 hover:text-black rounded transition ease-out duration-150"
-            onClick={() => setReplyID(null)}
-          >
-            (Cancel)
-          </button>
+          <div className="flex p-1 space-x-2">
+            <div className="flex flex-col md:flex-row w-full">
+              <p className="flex-col">
+                {replyID ? 'Replying to ' + replyID?.name + ' -' : ''}
+              </p>
+              <p className="font-light">{` "${replyID?.text.slice(
+                0,
+                22
+              )}..."`}</p>
+            </div>
+            <button
+              type="button"
+              className=" px-1 bg-white hover:bg-gray-300 text-slate-300 hover:text-black rounded transition ease-out duration-150"
+              onClick={() => setReplyID(null)}
+            >
+              (Cancel)
+            </button>
+          </div>
         ) : (
           ''
         )}
