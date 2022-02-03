@@ -18,16 +18,16 @@ function Comment({
 }) {
   const [minimised, setMinimised] = useState(false)
   const nestMargin = [
-    'ml-2 max-w-[99.2%]',
-    'ml-4 max-w-[98.6%]',
-    'ml-6 max-w-[97.8%]',
-    'ml-8 max-w-[97%]',
+    'ml-2 max-w-[99.2%] ',
+    'ml-4 max-w-[98.6%] ',
+    'ml-6 max-w-[97.8%] ',
+    'ml-8 max-w-[97%] ',
   ]
   const nestWidth = [
     ' max-w-[80.2%] md:max-w-full',
-    ' max-w-[98.6%] md:max-w-full',
-    ' max-w-[97.8%] md:max-w-full',
-    ' max-w-[97%] md:max-w-full',
+    ' max-w-[75.2%] md:max-w-full',
+    ' max-w-[70.2%] md:max-w-full',
+    ' max-w-[65.2%] md:max-w-full',
   ]
   const nestFloor = (nestLevel <= 4 ? nestLevel : 4) - 1
   return (
@@ -61,7 +61,7 @@ function Comment({
             (replyID?.id === comment.id
               ? 'bg-gray-200 transition ease-in-out duration-300 '
               : '') +
-            (nestLevel && nestMargin[nestFloor])
+            (nestLevel ? nestMargin[nestFloor] : 'border-l')
           }
         >
           <div className="flex-shrink-0">
