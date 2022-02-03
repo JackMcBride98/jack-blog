@@ -5,17 +5,16 @@ import { useAuth0 } from '@auth0/auth0-react'
 export default function useComments() {
   const { getAccessTokenSilently } = useAuth0()
   const [text, setText] = useState('')
+  const [replyID, setReplyID] = useState(false)
   const [url, setUrl] = useState(null)
 
-  const { data: comments, mutate } = useSWR(
-    () => {
-      const query = new URLSearchParams({ url })
-      return `/api/comment?${query.toString()}`
-    },
-    {
-      initialData: [],
-    }
-  )
+  const fetcher = (...args) => fetch(...args).then((res) => res.json())
+
+  const { data: comments, mutate } = useSWR(() => {
+    const query = new URLSearchParams({ url })
+
+    return `/api/comment?${query.toString()}`
+  }, fetcher)
 
   useEffect(() => {
     const url = window.location.origin + window.location.pathname
@@ -29,7 +28,7 @@ export default function useComments() {
     try {
       await fetch('/api/comment', {
         method: 'POST',
-        body: JSON.stringify({ url, text }),
+        body: JSON.stringify({ url, text, replyID }),
         headers: {
           Authorization: token,
           'Content-Type': 'application/json',
@@ -44,6 +43,7 @@ export default function useComments() {
 
   const onDelete = async (comment) => {
     const token = await getAccessTokenSilently()
+    console.log(comment)
 
     try {
       await fetch('/api/comment', {
@@ -60,5 +60,5 @@ export default function useComments() {
     }
   }
 
-  return { text, setText, comments, onSubmit, onDelete }
+  return { text, setText, replyID, setReplyID, comments, onSubmit, onDelete }
 }

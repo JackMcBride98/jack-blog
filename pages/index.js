@@ -1,10 +1,10 @@
 import Container from '../components/container'
 import Image from 'next/image'
 import Link from 'next/link'
-import distanceToNow from '../lib/dateRelative'
 import { getAllPosts } from '../lib/getPost'
 import JackElmaImg from '../public/images/Jack-Elma.jpg'
 import rightArrow from '../public/images/right-arrow.png'
+import formatDate from '../lib/formatDate'
 
 function HomePage({ allPosts }) {
   return (
@@ -12,7 +12,7 @@ function HomePage({ allPosts }) {
       <Container>
         <div className="flex justify-center">
           <Image
-            className="rounded-full"
+            className="rounded-full  hover:scale-110 transition ease-in duration-500"
             src={JackElmaImg}
             alt="Jack and Elma"
             width={250}
@@ -43,9 +43,9 @@ function HomePage({ allPosts }) {
               >
                 <article
                   key={post.slug}
-                  className="mb-10 rounded-md hover:shadow-md hover:cursor-pointer border-2 p-4 pb-0 space-y-2 w-4/5 group"
+                  className="mb-10 rounded-md hover:shadow-md hover:cursor-pointer border-2 p-4 pb-0 space-y-2 w-4/5 group transition ease-in-out duration-300"
                 >
-                  <a className="text-lg leading-6 font-bold group-hover:text-purple-600">
+                  <a className="text-lg leading-6 font-bold group-hover:text-purple-600 transition ease-in-out duration-300">
                     {post.title}
                   </a>
                   <p>{post.excerpt}</p>
@@ -53,7 +53,7 @@ function HomePage({ allPosts }) {
                     Tags: <b> {post.tags} </b>{' '}
                   </p>
                   <div className="text-gray-400 flex justify-between">
-                    <time>{distanceToNow(new Date(post.date))}</time>
+                    <time>{formatDate(new Date(post.date))}</time>
                     <div className="mr-2 mb-2">
                       <Image
                         src={rightArrow}
