@@ -64,18 +64,22 @@ function Comment({
             (nestLevel ? nestMargin[nestFloor] : 'border-l')
           }
         >
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 flex-col">
             <img
               src={comment.user.picture}
               alt={comment.user.name}
               className="rounded-full  w-7 h-7 md:w-10 md:h-10"
             />
+
+            {/* <p className="text-center font-light mt-2">
+              {'>'.repeat(nestFloor)}
+            </p> */}
           </div>
 
-          <div className={'w-full grow' + nestWidth[nestFloor]}>
+          <div className={'w-full grow -mb-2' + nestWidth[nestFloor]}>
             <div className="flex  space-x-1 md:space-x-2 items-center">
               <b>{comment.user.name}</b>
-              <time className="text-gray-400">
+              <time className="text-gray-400 text-sm whitespace-nowrap self-start md:text-base">
                 {distanceToNow(comment.created_at)}
               </time>
               {nestLevel && nestLevel > 4 && (
@@ -87,7 +91,7 @@ function Comment({
               )}
               {(isAdmin || isAuthor) && (
                 <button
-                  className="text-gray-400 hover:text-red-500 hover:scale-150  transition ease-out duration-300"
+                  className="text-gray-400 hover:text-red-500 hover:scale-150  transition ease-out duration-300 self-start pl-4"
                   onClick={() => onDelete(comment)}
                   aria-label="Close"
                 >
@@ -98,16 +102,17 @@ function Comment({
                 type="button"
                 aria-label="Minimise"
                 onClick={() => setMinimised(true)}
+                className="self-start pl-4"
               >
                 <MinimiseIcon
-                  width={20}
-                  height={20}
-                  className="fill-gray-400 mt-1 hover:scale-150  transition ease-out duration-300"
+                  width={24}
+                  height={24}
+                  className="fill-gray-400 hover:scale-150  transition ease-out duration-300"
                 />
               </button>
             </div>
 
-            <p className="break-words">{comment.text}</p>
+            <p className="break-words py-2">{comment.text}</p>
             <button
               type="button"
               onClick={() => {

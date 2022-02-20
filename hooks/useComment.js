@@ -23,6 +23,7 @@ export default function useComments() {
 
   const onSubmit = async (e) => {
     e.preventDefault()
+    setReplyID(null)
     const token = await getAccessTokenSilently()
 
     try {
@@ -43,7 +44,6 @@ export default function useComments() {
 
   const onDelete = async (comment) => {
     const token = await getAccessTokenSilently()
-    console.log(comment)
 
     try {
       await fetch('/api/comment', {
