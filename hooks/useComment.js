@@ -23,6 +23,7 @@ export default function useComments() {
 
   const onSubmit = async (e) => {
     e.preventDefault()
+    setReplyID(null)
     const token = await getAccessTokenSilently()
 
     try {

@@ -46,6 +46,13 @@ function CommentForm({
             : 'Please login to leave a comment'
         }
         onChange={(e) => setText(e.target.value)}
+        onKeyUp={(e) => {
+          e.preventDefault()
+          if (e.key === 'Enter') {
+            setText('')
+            onSubmit(e)
+          }
+        }}
         value={text}
         disabled={!isAuthenticated}
       />
