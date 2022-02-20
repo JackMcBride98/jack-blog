@@ -43,7 +43,6 @@ export default function useComments() {
 
   const onDelete = async (comment) => {
     const token = await getAccessTokenSilently()
-    console.log(comment)
 
     try {
       await fetch('/api/comment', {
