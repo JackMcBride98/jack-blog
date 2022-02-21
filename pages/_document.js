@@ -17,6 +17,10 @@ export default class MyDocument extends NextDocument {
           <meta charSet="utf-8" />
           <meta name="robots" content="follow, index" />
           <meta name="description" content={meta.description} />
+          <meta
+            name="google-site-verification"
+            content="VZGnEz3QRBdhp6brONj_ezQLHEhN6mkzvBAN80-kugQ"
+          />
         </Head>
 
         <body>
